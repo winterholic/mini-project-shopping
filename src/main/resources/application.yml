@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: void
+  datasource:
+    url: jdbc:mysql://localhost:3306/voiddot?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: test
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+  mail:
+    host: smtp.naver.com
+    port: 465
+    username: mailsystem9983@naver.com
+    password: 13M6M4923CMV
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+            trust: smtp.naver.com
+        debug: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: alpha
+    tags-sorter: alpha
+  packages-to-exclude: com.miniproject.auth.exceiption
+
+jwt:
+  secret: 8335fd0f6abf4d38b68a80665f789bf0b8e2fbb259e46064edac09fcadfd3a9d33ed76df492dbe75b18daa9e335494d9331780cc5d7a9450df8cddc45b0345fc
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
